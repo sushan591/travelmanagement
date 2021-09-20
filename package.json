@@ -1,0 +1,56 @@
+{
+  "name": "travelmanagement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src/index.js -d dist",
+    "knex": "babel-node node_modules/.bin/knex",
+    "seed": "yarn knex seed:run --knexfile src/knexfile.js",
+    "migrate": "yarn knex migrate:latest --knexfile src/knexfile.js",
+    "rollback": "yarn knex migrate:rollback --knexfile src/knexfile.js",
+    "make:seeder": "yarn knex seed:make --knexfile src/knexfile.js",
+    "make:migration": "yarn knex migrate:make --knexfile src/knexfile.js",
+    "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushan591/travelmanagement.git"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "es6",
+    "api",
+    "tmis"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sushan591/travelmanagement/issues"
+  },
+  "homepage": "https://github.com/sushan591/travelmanagement#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
+    "eslint": "^7.32.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bookshelf": "^1.2.0",
+    "bookshelf-virtuals-plugin": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "http-status-codes": "^2.1.4",
+    "knex": "^0.95.11",
+    "multer": "^1.4.3",
+    "mysql2": "^2.3.0"
+  }
+}
